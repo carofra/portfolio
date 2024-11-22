@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>carolinafranceschiello</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo">Carolina</a>
+      <input type="checkbox" class="color-menu" id="color-menu" />
+
+      
+      <label for="color-menu" class="color-menu">
+        <i class="fa fa-moon-o moon-icon" style="font-size: 24px"></i>
+        <i class="fa fa-sun-o sun-icon" style="font-size: 24px"></i>
+    </header>
+    <div class="about-section">
+      <div>
+        <div class="text">I'm a</div>
+      <div class="text">Web Developer</div>
+      <div class="text">
+        <a href="#about">If you want to learn more about me keep reading</a>
+      </div>
+      <div class="border"></div>
+    </div>
+      <div class="menu">
+        <div class="text-menu"><a href="#about">About me</a></div>
+        <div class="text-menu"><a onclick="openForm()">Contacts me</a></div>
+      </div>
+    </div>
+    <section id="about">
+      <h1 class="about-title">About Me</h1>
+      <div class="about-container">
+        <div class="foto-cotainer">
+          <img src="img/me.jpg" />
+        </div>
+        <div class="text-container">
+          <p class="about-text" style="font-size: 30px">Hi everyone!</p>
+          <p class="about-text">
+            I'm <strong>Carolina Franceschiello</strong>, a passionate Web
+            Developer, committed to delivering creative and innovative
+            solutions.
+          </p>
+          <p class="about-text">
+            Driven by curiosity, precision, and an eye for detail, I strive to
+            make every project unique and user-focused.
+          </p>
+          <p class="about-text">
+            Let’s connect and create something amazing together.
+          </p>
+          <p class="about-text">
+            <a href="cv.html" class="link">Check out my CV </a>
+            <p class="link" id="open">Contact me</p>
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="modal-container" id="modal">
+      <section class="modal">
+        <button class="close-btn" id="close">x</button>
+        <div class="modal-content">
+          <form class="modal-form">
+            <div>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Name"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="name">Email</label>
+              <input
+                type="text"
+                id="email"
+                placeholder="email@email.it"
+                class="form-input"
+              />
+            </div>
+            <div>
+              <label for="name">Write here your message</label>
+              <textarea></textarea>
+            </div>
+            <i class="fa fa-send-o" id="send"></i>
+          </form>
+        </div>
+      </section>
+    </section>
+    <footer>
+      <p>Created by Carolina Franceschiello. © 2024</p>
+    </footer>
+    <button id="scrollToTopBtn">Back to top</button>
+
+    <script>
+      const colorMenuCheckbox = document.getElementById("color-menu");
+
+      // Carica il tema preferito dall'utente (se esiste)
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme === "light") {
+        document.body.classList.add("light-mode");
+        colorMenuCheckbox.checked = true;
+      }
+
+      colorMenuCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+          document.body.classList.add("light-mode");
+          localStorage.setItem("theme", "light");
+        } else {
+          document.body.classList.remove("light-mode");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+
+      // Mostra il bottone quando l'utente scorre verso il basso
+      window.onscroll = function () {
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          scrollToTopBtn.style.display = "block"; // Mostra il bottone
+        } else {
+          scrollToTopBtn.style.display = "none"; // Nascondi il bottone
+        }
+      };
+
+      // Funzione per tornare in cima
+      document.getElementById("scrollToTopBtn").onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll animato
+      };
+
+      //close and open form contact
+
+      const close = document.getElementById("close");
+      const open = document.getElementById("open");
+      const modal = document.getElementById("modal");
+      const send = document.getElementById("send");
+
+      open.addEventListener("click", () => modal.classList.add("show-modal"));
+      close.addEventListener("click", () =>
+        modal.classList.remove("show-modal")
+      );
+      send.addEventListener("click", () =>
+        modal.classList.remove("show-modal")
+      );
+    </script>
+  </body>
+</html>
