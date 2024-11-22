@@ -1,0 +1,128 @@
+// Definizione dei colori dalla palette
+@color-light: #f4dbd8;
+@color-medium-light: #bea8a7;
+@color-medium-dark: #c09891;
+@color-dark: #775144;
+@color-darker: #2a0800;
+
+// Applicazione dei colori al tema chiaro
+.light-theme {
+  background-color: @color-light;
+  color: @color-dark;
+}
+
+.dark-theme {
+  background-color: @color-darker;
+  color: @color-light;
+}
+
+.sticky-menu {
+  position: sticky;
+  top: 0;
+  background-color: @color-medium-light;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.sticky-menu nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sticky-menu nav ul li {
+  margin-right: 2rem;
+}
+
+.sticky-menu nav ul li a {
+  text-decoration: none;
+  color: @color-dark;
+  font-weight: 500;
+}
+
+button {
+  background-color: @color-medium-dark;
+  color: @color-light;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: @color-dark;
+}
+
+section {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  margin: 0 0.5rem;
+  color: @color-dark;
+  font-size: 1.5rem;
+}
+
+.social-icon:hover {
+  color: @color-medium-light;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+// Sezione About Me
+#about {
+  margin-top: 5rem;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 10px; // Aggiungi angoli arrotondati per un look più moderno
+}
+
+#about h2 {
+  font-size: 2.5em;
+  color: @color-dark;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: @color-medium-dark;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.scroll-caption {
+  font-size: 1.1em;
+  color: @color-medium-dark;
+  font-style: italic;
+  margin-top: 40px;
+}
+
+// Aggiungi una linea orizzontale sotto il titolo
+#about h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: @color-medium-light;
+  margin: 20px auto 0;
+}
+
+a {
+  text-decoration: none;
+  color: #775144;
+}
