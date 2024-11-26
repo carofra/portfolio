@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>carolinafranceschiello</title>
+
     <link rel="stylesheet" href="css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=GeistMono:wght@400;700&display=swap"
@@ -25,13 +26,13 @@
         <div class="collapse navbar-collapse d-flex" id="navbarNav">
           <ul class="navbar-nav ms-auto custom-navbar">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link active" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="cv.html">Curriculum</a>
@@ -40,14 +41,42 @@
         </div>
       </div>
     </nav>
-    <section id="home" class="visible">
-      <div class="titleJob">Frontend Developer</div>
-      <div class="subTitleJob">
-        Let’s connect and create something amazing together
-      </div>
-      <a href="contact.html" class="contact">Get in touch</a>
+    <section id="contact">
+      <div class="sectionTitle">Contact Me</div>
+      <form class="contactForm" onsubmit="sendMail(event)">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            name="message"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="submitButton">Send Message</button>
+      </form>
     </section>
-
     <footer class="footer">
       <footer>
         <div class="footerText">
@@ -57,5 +86,16 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "zTiD1h3KNmnAMlYrO",
+        });
+      })();
+    </script>
   </body>
 </html>

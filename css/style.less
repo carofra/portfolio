@@ -1,128 +1,231 @@
-// Definizione dei colori dalla palette
-@color-light: #f4dbd8;
-@color-medium-light: #bea8a7;
-@color-medium-dark: #c09891;
-@color-dark: #775144;
-@color-darker: #2a0800;
+//colors
+@color-body: rgb(251 207 232 / var(--tw-bg-opacity, 1));
+@color-section-selected: #4aed80;
+@color-section-not-selected: #facc15;
+@color-blue: #93c5fd;
+@color-text: #000000;
+@color-skills: #d8b4fe;
+//fonts
+@font-weight: 700;
+@font-body: "GeistMono", monospace;
+//box and border
+@box-shadow-curriculum: 5px 5px 0px 0px @color-text;
+@border-radius-curriculum: 5px;
+@border-curriculum: 5px solid @color-text;
 
-// Applicazione dei colori al tema chiaro
-.light-theme {
-  background-color: @color-light;
-  color: @color-dark;
+//Body
+.portfolio {
+  background-color: @color-body;
+  font-family: @font-body;
+  padding: 2rem;
 }
 
-.dark-theme {
-  background-color: @color-darker;
-  color: @color-light;
+//Navbar
+.title {
+  font-weight: @font-weight;
+  font-size: 2.25rem !important;
+  line-height: 2.5rem !important;
+  white-space: pre-wrap !important;
 }
 
-.sticky-menu {
-  position: sticky;
-  top: 0;
-  background-color: @color-medium-light;
-  padding: 1rem;
+.container-fluid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.custom-navbar {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sticky-top {
+  background-color: @color-body;
   z-index: 1000;
 }
 
-.sticky-menu nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.custum-navbar-collapse {
+  margin-bottom: 5rem;
+}
+//Default style for section and link
+.section {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
-.sticky-menu nav ul li {
-  margin-right: 2rem;
-}
-
-.sticky-menu nav ul li a {
+a.contact {
   text-decoration: none;
-  color: @color-dark;
-  font-weight: 500;
-}
-
-button {
-  background-color: @color-medium-dark;
-  color: @color-light;
-  border: none;
-  padding: 0.5rem 1rem;
   cursor: pointer;
+  color: @color-text;
+}
+
+.sectionTitle {
+  font-weight: @font-weight;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.sectionText {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.sectionSubTitle {
+  font-size: 2rem;
+}
+
+.nav-item .nav-link,
+a.contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
   border-radius: 5px;
+  background-color: @color-section-not-selected;
+  border: 4px solid @color-text;
+  box-shadow: 4px 4px 0px 0px @color-text;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-right: 1rem;
 }
 
-button:hover {
-  background-color: @color-dark;
+/* Effetto Hover */
+.nav-item .nav-link:hover,
+a.contact:hover,
+.submitButton:hover {
+  box-shadow: none;
+  transform: translate(1px, 1px);
+  color: @color-text;
+  text-decoration: none;
 }
 
-section {
-  padding: 3rem 0;
+.nav-link.active {
+  background-color: @color-section-selected;
+}
+
+.nav-link {
+  color: @color-text !important;
+}
+
+//Section Home
+#home {
   text-align: center;
 }
 
-footer {
-  text-align: center;
-  margin-top: 2rem;
+.titleJob {
+  font-weight: @font-weight;
+  font-size: 3.75rem;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
-.social-icon {
-  margin: 0 0.5rem;
-  color: @color-dark;
+.subTitleJob {
   font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 2rem;
 }
 
-.social-icon:hover {
-  color: @color-medium-light;
+//Section About me
+.sectionAboutMe {
+  border-radius: 5px;
+  border: 5px solid @color-text;
+  box-shadow: 5px 5px 0px 0px @color-text;
+  background-color: @color-blue;
+  padding: 32px;
 }
 
-#contact-form {
+//Section Contact
+
+#contact {
+  border-radius: 5px;
+  border: 5px solid @color-text;
+  box-shadow: 5px 5px 0px 0px @color-text;
+  background-color: @color-section-selected;
+  padding: 32px;
+}
+
+.contactForm {
   display: flex;
   flex-direction: column;
-  align-content: space-around;
-  align-items: center;
-  gap: 10px;
 }
 
-// Sezione About Me
-#about {
-  margin-top: 5rem;
-  padding: 60px 20px;
+.contactForm .form-label {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactForm .form-control {
+  font-size: 1.125rem;
+  padding: 0.5rem;
+  border-color: @color-text;
+  border-width: 2px;
+}
+
+.contactForm .form-control:focus {
+  box-shadow: none; /* Rimuovi l'ombreggiatura di Bootstrap */
+  border-color: darken(@color-text, 10%);
+}
+
+.submitButton {
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  background-color: @color-section-not-selected;
+  border: 2px solid @color-text;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.submitButton:hover {
+  background-color: darken(@color-section-not-selected, 10%);
+  transform: translateY(-2px);
+}
+
+/**CURRICULUM**/
+
+#education,
+#work,
+#skills,
+#languages {
+  border-radius: @border-radius-curriculum;
+  border: @border-curriculum;
+  box-shadow: @box-shadow-curriculum;
+  padding: 20px;
+  margin-bottom: 3rem;
+}
+
+#education {
+  background-color: @color-blue;
+}
+
+#work {
+  background-color: @color-section-selected;
+}
+
+#skills {
+  background-color: @color-skills;
+}
+
+#languages {
+  background-color: @color-section-not-selected;
+}
+
+//Footer
+.footer {
   text-align: center;
-  border-radius: 10px; // Aggiungi angoli arrotondati per un look più moderno
+  margin-top: 3rem;
 }
 
-#about h2 {
-  font-size: 2.5em;
-  color: @color-dark;
-  margin-bottom: 20px;
-}
-
-#about p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: @color-medium-dark;
-  max-width: 800px;
-  margin: 0 auto 20px;
-}
-
-.scroll-caption {
-  font-size: 1.1em;
-  color: @color-medium-dark;
-  font-style: italic;
-  margin-top: 40px;
-}
-
-// Aggiungi una linea orizzontale sotto il titolo
-#about h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: @color-medium-light;
-  margin: 20px auto 0;
-}
-
-a {
-  text-decoration: none;
-  color: #775144;
+.footerText {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }

@@ -1,26 +1,104 @@
 <!DOCTYPE html>
 <html>
-  <head>    <link rel="stylesheet" href="css/style.css" />
+  <head>
+    <title>carolinafranceschiello</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=GeistMono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
   </head>
-  <body>
-    <div class="timeline">
-        <div class="timeline-item">
-            <h3>2024 - Junior Frontend Developer</h3>
-            <p>Lavoro come Junior Developer presso Genya Studio.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>2022 - Laurea in Informatica</h3>
-            <p>Mi sono laureata in Informatica per la Gestione Aziendale.</p>
-          </div>
+  <body class="portfolio">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top custum-navbar-collapse">
+      <div class="container-fluid">
+        <a class="navbar-brand title" href="#">Carolina Franceschiello</a>
+
+        <div class="collapse navbar-collapse d-flex" id="navbarNav">
+          <ul class="navbar-nav ms-auto custom-navbar">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="cv.html">Curriculum</a>
+            </li>
+          </ul>
         </div>
-    </div>
+      </div>
+    </nav>
+    <section id="education" class="visible">
+      <h2 class="sectionTitle">Academic education</h2>
+      <h1 class="sectionSubTitle">
+        Bachelor's Degree - Computer Science for Management
+      </h1>
+      <p class="sectionText">University of Bologna - Bologna</p>
+      <p class="sectionText">September 2018 - December 2022</p>
 
-    <button id="backbutton" onclick=back()>Back</button>
+      <h1 class="sectionSubTitle">Classical High School Diploma</h1>
+      <p class="sectionText">“F.D'Ovidio” High School - Larino (CB)</p>
+    </section>
+    <section id="work" class="visible">
+      <h2 class="sectionTitle">Work experience</h2>
+      <h1 class="sectionSubTitle">Junior Frontend Developer - Alten Italia</h1>
+      <h3>July 2023 - Present</h3>
+      <p class="sectionText">
+        Frontend Developer for a software solution designed to optimize the
+        business of professional firms.
+      </p>
+      <h1 class="sectionSubTitle">
+        Extracurricular Training Internship - Alten Italy
+      </h1>
+      <h4>January 2023 - July 2023</h3>
+      <h1 class="sectionSubTitle">
+        Curricular Internship - University of Bologna
+      </h1>
+      <h4>July 2021 - November 2021</h3>
+      <p class="sectionText">
+        Study of Machine Learning techniques based on Support Vector Machine
+        (SVM) and software tools needed to implement the classification program.
+      </p>
+      <p class="sectionText">
+        Writing a report in which the performance of classification algorithms
+        through the use of the library sckit-learn of Python applied to a data
+        set, usable for teaching in the Numerical Statistics course at the
+        University of Bologna.
+      </p>
+    </section>
+    <section id="skills" class="visible">
+      <h2 class="sectionTitle">Skills</h2>
+      <h3>
+        HTML, CSS, Javascript, Typescript, Angular.js, React, MongoDB, MYSQL,
+        Metodologia Agile
+      </h3>
+    </section>
+    <section id="languages" class="visible">
+      <h2 class="sectionTitle">Languages</h2>
+      <h3>Italian - Native</h3>
+      <h3>English - Elementary Proficiency</h3>
+    </section>
 
-    <script>
-        function back() {
-        window.location = "index.html";
-        }
-    </script>
+    <footer class="footer">
+      <footer>
+        <div class="footerText">
+          © 2024 Carolina Franceschiello. All rights reserved.
+        </div>
+      </footer>
+    </footer>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
