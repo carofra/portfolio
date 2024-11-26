@@ -28,10 +28,10 @@ function sendMail(event) {
 
   // Controlla se i campi sono vuoti o l'email non è valida
   if (!name || !email || !message) {
-    alert("Tutti i campi sono obbligatori.");
+    alert("All fields are required");
     return; // Interrompe la funzione se uno dei campi è vuoto
   } else if (!isValidEmail(email)) {
-    alert("Inserisci un'email valida.");
+    alert("Enter a valid email");
     return; // Interrompe la funzione se l'email non è valida
   }
 
@@ -54,7 +54,7 @@ function sendMail(event) {
       document.getElementById("email").value = "";
       document.getElementById("message").value = "";
       console.log(res);
-      alert("Il tuo messaggio è stato inviato con successo!");
+      alert("Your message has been sent successfully!");
     })
     .catch((err) => console.log(err));
 }
