@@ -3,16 +3,12 @@
   font-family: "GeistMono", monospace;
   padding: 2rem;
 }
-.title {
+.navbar-brand.title {
+  text-align: left;
+  white-space: normal;
   font-weight: 700;
   font-size: 2.25rem !important;
   line-height: 2.5rem !important;
-  white-space: pre-wrap !important;
-}
-.container-fluid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 .custom-navbar {
   margin-left: auto;
@@ -25,6 +21,7 @@
 }
 .custum-navbar-collapse {
   margin-bottom: 5rem;
+  width: 101%;
 }
 .section {
   display: flex;
@@ -134,11 +131,14 @@ a.contact:hover,
 }
 .submitButton {
   padding: 0.75rem 1.5rem;
-  font-weight: bold;
   background-color: #facc15;
   border: 2px solid #000000;
   transition: all 0.3s ease;
   width: fit-content;
+  font-family: "GeistMono", monospace;
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 .submitButton:hover {
   background-color: #d7ad05;

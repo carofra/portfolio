@@ -21,17 +21,12 @@
 }
 
 //Navbar
-.title {
+.navbar-brand.title {
+  text-align: left;
+  white-space: normal;
   font-weight: @font-weight;
   font-size: 2.25rem !important;
   line-height: 2.5rem !important;
-  white-space: pre-wrap !important;
-}
-
-.container-fluid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
 }
 
 .custom-navbar {
@@ -47,7 +42,9 @@
 
 .custum-navbar-collapse {
   margin-bottom: 5rem;
+  width: 101%;
 }
+
 //Default style for section and link
 .section {
   display: flex;
@@ -178,11 +175,14 @@ a.contact:hover,
 
 .submitButton {
   padding: 0.75rem 1.5rem;
-  font-weight: bold;
   background-color: @color-section-not-selected;
   border: 2px solid @color-text;
   transition: all 0.3s ease;
   width: fit-content;
+  font-family: @font-body;
+  color: @color-text;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .submitButton:hover {
